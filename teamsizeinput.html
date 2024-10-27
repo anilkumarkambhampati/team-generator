@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="teamsizeinput.php" method="post">
+      <table>
+        <tr>
+          <td>
+            <label for="nt">No. of Teams:</label>
+          </td>
+          <td>
+            <input type="number" name="nt" id="nt" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">(or)</td>
+        </tr>
+        <tr>
+          <td>
+            <label for="size">Size of the team:</label>
+          </td>
+          <td>
+            <input type="number" name="size" id="size" />
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Submit" onclick="return f1()" /><br />
+            Note: if you enter both size and no. of teams fields the algorithm
+            prefers the No. of teams field details
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      function f1() {
+        const size = document.getElementById("size").value;
+        const nt = document.getElementById("nt").value;
+
+        if (size === "" && nt === "") {
+          alert(
+            "Please enter valid details either Size of the team or No. of Teams."
+          );
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>

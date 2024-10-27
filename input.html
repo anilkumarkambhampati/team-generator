@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Input Type Selection</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="input.php" method="post" name="myform" id="myform">
+      <table>
+        <tr>
+          <td><label for="iptype">Input type:</label></td>
+          <td>
+            <select name="iptype" id="iptype" required>
+              <option value="">Select your choice</option>
+              <option value="Excel file">Excel file</option>
+              <option value="keyboard">Using Keyboard</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input
+              type="submit"
+              value="Submit"
+              onclick="return validateForm()"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script type="text/javascript">
+      function validateForm() {
+        const it = document.getElementById("iptype").value;
+        if (it !== "") {
+          return true;
+        } else {
+          alert("Please choose a valid option");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
