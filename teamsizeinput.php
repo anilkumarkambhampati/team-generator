@@ -14,7 +14,7 @@ $no = $con->query("SELECT COUNT(id) AS count FROM student")->fetch_assoc()['coun
 $acs = $con->query("SELECT COUNT(id) AS count FROM student WHERE cgpa>0")->fetch_assoc()['count'];
 $ncs = $con->query("SELECT COUNT(id) AS count FROM student WHERE cgpa=0")->fetch_assoc()['count'];
 
-$size = isset($_POST['size']) ? (int)$_POST['size'] : null;
+//$size = isset($_POST['size']) ? (int)$_POST['size'] : null;
 $nt = isset($_POST['nt']) ? (int)$_POST['nt'] : null;
 
 if ($nt == null) {
@@ -23,7 +23,7 @@ if ($nt == null) {
 
 if ($no < $nt) {
     echo "<script>
-            alert('Enter valid data');
+            alert('Students are not enough to make requested team size');
             window.location.href = 'teamsizeinput.html';
         </script>";
     exit;

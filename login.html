@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="input.html" method="post">
+      <table>
+        <tr>
+          <td colspan="2" align="center">
+            <h1><u>Login</u></h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="username">Username: </label>
+          </td>
+          <td>
+            <input type="text" name="username" id="username" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="pass">Password: </label>
+          </td>
+          <td>
+            <input type="text" name="pass" id="pass" />
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Login" onclick="return f1()" /><br />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      function f1() {
+        const pass = document.getElementById("pass").value;
+        const username = document.getElementById("username").value;
+
+        if (pass === "1234" && username === "sreyas") {
+          return true;
+        }
+        alert("Please enter valid details");
+        return false;
+      }
+    </script>
+  </body>
+</html>

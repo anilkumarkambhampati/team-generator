@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      td {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" method="post" onsubmit="f1(event)">
+      <table>
+        <tr>
+          <td>
+            <label for="name">Name:</label>
+          </td>
+          <td>
+            <input type="text" name="name" id="name" required />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="des">Designation:</label>
+          </td>
+          <td>
+            <input type="text" name="des" id="des" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="exp">Experience:</label>
+          </td>
+          <td>
+            <input type="number" name="exp" id="exp" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="domain">Domain:</label>
+          </td>
+          <td>
+            <input
+              type="checkbox"
+              name="domain"
+              id="c1"
+              value="web development"
+            />Web Development<br />
+            <input
+              type="checkbox"
+              name="domain"
+              id="c2"
+              value="game development"
+            />Game Development<br />
+            <input
+              type="checkbox"
+              name="domain"
+              id="c3"
+              value="data science"
+            />Data science<br />
+            <input
+              type="checkbox"
+              name="domain"
+              id="c4"
+              value="block chain"
+            />Block Chain<br />
+            <input
+              type="checkbox"
+              name="domain"
+              id="c5"
+              value="aiml"
+            />AI&ML<br />
+            <input
+              type="checkbox"
+              name="domain"
+              id="c6"
+              value="app development"
+            />App Development<br />
+            <input
+              type="checkbox"
+              name="domain"
+              id="c7"
+              value="cyber security"
+            />Cyber Security<br />
+            <input
+              type="checkbox"
+              name="domain"
+              id="c8"
+              value="cloud computing"
+            />Cloud Computing<br />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="submit" value="Submit" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      function f1(event) {
+        event.preventDefault(); // Prevent form submission
+        const selectedDomains = [];
+        const checkboxes = document.querySelectorAll(
+          'input[name="domain"]:checked'
+        );
+
+        checkboxes.forEach((checkbox) => {
+          selectedDomains.push(checkbox.value);
+        });
+
+        alert("Selected Domains: " + selectedDomains.join(", "));
+      }
+    </script>
+  </body>
+</html>
